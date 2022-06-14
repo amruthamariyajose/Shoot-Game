@@ -1,0 +1,115 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOOTING FIRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+  element.style {
+}
+.Score-Board {
+    border: 1px solid black;
+    background-color: pink;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 35% 35% auto;
+
+}
+</style>
+    <head><center><b>FIRE SHOOT</b></center></h1>
+    </head>
+<body>
+<div class="w3-display-container w3-green" style="height:300px;">
+ <div class="w3-display-left">PLAYER 1<img src="images/gun man1.jpg"width="90" height="100"></div>
+      <div class="w3-display-right"><img src="images/gun man2.jpg" alt="Italian Trulli"width="90" height="100">PLAYER 2</div>
+</div>
+
+
+ <button class="button" onclick="getRndInteger()">Shoot</button>
+ <button class="button" onclick="onReset()">Reset</button>
+
+<p id="demo"></p>
+
+<script>
+var count = 0;
+var sum_a = 0;
+var sum_b = 0;
+function getRndInteger() {
+    count = count+1;
+    document.getElementById('grid-item-10').innerHTML ="Round "+count;
+ let a = Math.round(Math.random());
+ let b = Math.round(Math.random());
+ if (count < 6)
+ {
+  sum_a += a;
+  sum_b += b;
+  document.getElementById('grid-item-4').innerHTML =sum_a;
+  document.getElementById('grid-item-8').innerHTML =sum_b;
+  }
+  else if (sum_a>sum_b)
+  {
+
+   document.getElementById('grid-item-9').innerHTML ="PLAYER 1 is the winner!";
+  }
+   else if (sum_a<sum_b)
+  {
+
+  document.getElementById('grid-item-9').innerHTML ="PLAYER2 is the winner!";
+  }
+  else
+  {
+  document.getElementById('grid-item-9').innerHTML ="tie";
+  }
+
+}
+function onReset()
+{
+count =0;
+sum_a = 0;
+sum_b = 0;
+document.getElementById('grid-item-4').innerHTML =0;
+  document.getElementById('grid-item-8').innerHTML =0;
+  document.getElementById('grid-item-9').innerHTML ="start";
+  document.getElementById('grid-item-10').innerHTML ="Ready to";
+}
+</script>
+<p id="demo"></p>
+
+
+<p id="demo"></p>
+<div class="result">
+    <div class="result-item" id="grid-item-10"></div>
+    <div class="result-item" id="grid-item-9"></div>
+</div>
+<div class="Score-Board">
+          <div class="grid-item" id="grid-item-1">Player 1</div>
+          <div class="grid-item" id="grid-item-3">Win</div>
+          <div class="grid-item" id="grid-item-4">0
+<script>
+
+</script></div>
+          <div class="grid-item" id="grid-item-5">Player 2</div>
+          <div class="grid-item" id="grid-item-7">Win</div>
+          <div class="grid-item" id="grid-item-8">0<script>
+
+
+
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
